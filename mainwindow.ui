@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="AdvancedToolBox" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menumenu">
+    <property name="title">
+     <string>menu</string>
+    </property>
+    <widget class="QMenu" name="menuadd">
+     <property name="title">
+      <string>add</string>
+     </property>
+     <addaction name="actiondsfad"/>
+     <addaction name="actionasdfgwe"/>
+     <addaction name="separator"/>
+     <addaction name="actiondfgsdrg"/>
+    </widget>
+    <widget class="QMenu" name="menutest">
+     <property name="title">
+      <string>test</string>
+     </property>
+     <addaction name="actionaaaa"/>
+     <addaction name="actionaaaa_2"/>
+     <addaction name="actionxxxx"/>
+    </widget>
+    <addaction name="menuadd"/>
+    <addaction name="menutest"/>
+    <addaction name="separator"/>
+    <addaction name="actionaaa"/>
+    <addaction name="actionbbb"/>
+   </widget>
+   <addaction name="menumenu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionaaa">
+   <property name="text">
+    <string>aaa</string>
+   </property>
+  </action>
+  <action name="actionbbb">
+   <property name="text">
+    <string>bbb</string>
+   </property>
+  </action>
+  <action name="actionawesae">
+   <property name="text">
+    <string>awesae</string>
+   </property>
+  </action>
+  <action name="actionaaaa">
+   <property name="text">
+    <string>aaaa</string>
+   </property>
+  </action>
+  <action name="actionaaaa_2">
+   <property name="text">
+    <string>aaaa</string>
+   </property>
+  </action>
+  <action name="actionxxxx">
+   <property name="text">
+    <string>xxxx</string>
+   </property>
+  </action>
+  <action name="actiondsfad">
+   <property name="text">
+    <string>dsfad\</string>
+   </property>
+  </action>
+  <action name="actionasdfgwe">
+   <property name="text">
+    <string>asdfgwe</string>
+   </property>
+  </action>
+  <action name="actiondfgsdrg">
+   <property name="text">
+    <string>dfgsdrg</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AdvancedToolBox</class>
+   <extends>QWidget</extends>
+   <header>advancedtoolbox.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
