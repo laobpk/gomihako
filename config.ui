@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>807</width>
+    <height>546</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -114,6 +114,12 @@
               <layout class="QVBoxLayout" name="verticalLayout_3">
                <item>
                 <widget class="QLabel" name="label">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="text">
                   <string>path_type:</string>
                  </property>
@@ -121,6 +127,12 @@
                </item>
                <item>
                 <widget class="QLabel" name="label_2">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="text">
                   <string>path:</string>
                  </property>
@@ -128,6 +140,12 @@
                </item>
                <item>
                 <widget class="QLabel" name="label_3">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="text">
                   <string>display_name:</string>
                  </property>
@@ -211,8 +229,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>398</width>
-             <height>101</height>
+             <width>418</width>
+             <height>85</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_4">
@@ -238,8 +256,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>23</height>
+     <width>807</width>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menumenu">
@@ -249,7 +267,26 @@
     <addaction name="actionadd_program"/>
     <addaction name="actionadd_page"/>
    </widget>
+   <widget class="QMenu" name="menuoption">
+    <property name="title">
+     <string>option</string>
+    </property>
+    <widget class="QMenu" name="menulanguage">
+     <property name="title">
+      <string>language</string>
+     </property>
+     <addaction name="actionenglish"/>
+     <addaction name="actionchinese"/>
+     <addaction name="actionrussian"/>
+     <addaction name="actionjapanese"/>
+     <addaction name="actionfrench"/>
+     <addaction name="actionkorean"/>
+     <addaction name="actiongerman"/>
+    </widget>
+    <addaction name="menulanguage"/>
+   </widget>
    <addaction name="menumenu"/>
+   <addaction name="menuoption"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionadd_program">
@@ -266,6 +303,41 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionenglish">
+   <property name="text">
+    <string>english</string>
+   </property>
+  </action>
+  <action name="actionchinese">
+   <property name="text">
+    <string>chinese</string>
+   </property>
+  </action>
+  <action name="actionrussian">
+   <property name="text">
+    <string>russian</string>
+   </property>
+  </action>
+  <action name="actionjapanese">
+   <property name="text">
+    <string>japanese</string>
+   </property>
+  </action>
+  <action name="actionfrench">
+   <property name="text">
+    <string>french</string>
+   </property>
+  </action>
+  <action name="actionkorean">
+   <property name="text">
+    <string>korean</string>
+   </property>
+  </action>
+  <action name="actiongerman">
+   <property name="text">
+    <string>german</string>
    </property>
   </action>
  </widget>

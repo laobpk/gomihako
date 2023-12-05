@@ -10,6 +10,16 @@
 #include <QFile>
 #include <QDir>
 
+enum language{
+    english = 0,
+    chinese,
+    russian,
+    german,
+    french,
+    japanese,
+    korean
+};
+
 typedef struct program{
     QString id;
     int sss;
@@ -27,6 +37,7 @@ class jsonioctrl
 {
 public:
     QString _default_editor_path;
+    int _language;
     QVector<page> _vecpages;
 public:
     static jsonioctrl& instance()
@@ -37,6 +48,7 @@ public:
     bool readconfig(QString configfile)
     {
         this->_default_editor_path="/root";
+        this->_language=language::english;
         this->_vecpages.clear();
         QFile file(configfile);
         QByteArray bytearray;
@@ -46,6 +58,7 @@ public:
             bytearray = file.readAll();
         QJsonDocument jsondoc = QJsonDocument::fromJson(bytearray);
         this->_default_editor_path = jsondoc.object().value("editor").toString();
+        this->_language = jsondoc.object().value("language").toInt();
         QJsonArray jsonarray = jsondoc.object().value("pages").toArray();
         int arrsize = jsonarray.size();
         for(int i = 0;i<arrsize;i++){
@@ -107,6 +120,7 @@ public:
         parse(_vecpages,pages);
         jsonobj["pages"] = pages;
         jsonobj["editor"] = QJsonValue(this->_default_editor_path);
+        jsonobj["language"] = QJsonValue(this->_language);
         QJsonDocument jsondoc(jsonobj);
         QByteArray bytearray = jsondoc.toJson();
         file.write(bytearray);

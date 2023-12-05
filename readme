@@ -1,0 +1,19 @@
+--------------------------------------------------
+v1.0.1 first release beta 
+--------------------------------------------------
+v1.0.2 dev
+* 修复双击图标contents界面在中标麒麟下最小化不显示问题
+* 增加在可执行同级目录下获取icon.png作为悬浮图标功能
+* 增加计算器功能 未完成
+* 增加快捷键功能
+* 增加麒麟系列系统下直接打开pluma功能
+* windows可直接编译 路径未见明显异常 先这样看着
+--------------------------------------------------
+plan : 
+1. change icon option √
+2. start with system option 
+3. windows transplant √
+4. inner language switch support 
+5. calcultor for ukylin v10 √
+6. open file with pluma √
+7. short cut keys √

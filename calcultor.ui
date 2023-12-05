@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>429</width>
+    <width>471</width>
     <height>522</height>
    </rect>
   </property>
@@ -255,6 +255,9 @@
      </property>
      <item>
       <widget class="QScrollArea" name="scrollArea">
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
        <property name="horizontalScrollBarPolicy">
         <enum>Qt::ScrollBarAlwaysOff</enum>
        </property>
@@ -266,7 +269,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>83</width>
+          <width>93</width>
           <height>325</height>
          </rect>
         </property>
@@ -705,6 +708,9 @@
      </item>
      <item>
       <widget class="QScrollArea" name="scrollArea_2">
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
        <property name="horizontalScrollBarPolicy">
         <enum>Qt::ScrollBarAlwaysOff</enum>
        </property>
@@ -716,7 +722,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>83</width>
+          <width>93</width>
           <height>325</height>
          </rect>
         </property>

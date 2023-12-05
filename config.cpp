@@ -228,3 +228,52 @@ void config::on_actionadd_page_triggered()
     ui->treeWidget->blockSignals(false);
     on_treeWidget_itemClicked(newroot, 0);
 }
+
+
+void config::on_actionenglish_triggered()
+{
+    jsonioctrl::instance()._language = language::english;
+    emit sig_switchlanguage();
+}
+
+
+void config::on_actionchinese_triggered()
+{
+    jsonioctrl::instance()._language = language::chinese;
+    emit sig_switchlanguage();
+}
+
+
+void config::on_actionrussian_triggered()
+{
+    jsonioctrl::instance()._language = language::russian;
+}
+
+
+void config::on_actionfrench_triggered()
+{
+    jsonioctrl::instance()._language = language::french;
+    emit sig_switchlanguage();
+}
+
+
+void config::on_actionjapanese_triggered()
+{
+    jsonioctrl::instance()._language = language::japanese;
+    emit sig_switchlanguage();
+}
+
+
+void config::on_actionkorean_triggered()
+{
+    jsonioctrl::instance()._language = language::korean;
+    emit sig_switchlanguage();
+}
+
+
+void config::on_actiongerman_triggered()
+{
+    jsonioctrl::instance()._language = language::german;
+    emit sig_switchlanguage();
+}
+

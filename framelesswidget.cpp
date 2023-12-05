@@ -27,7 +27,7 @@ FramelessWidget::FramelessWidget(QWidget *parent) :
 //    } );
 //    _contextmenu->addAction(terminal);
 
-    QAction* editor = new QAction("editor",this);
+    QAction* editor = new QAction(tr("editor"),this);
     connect( editor , &QAction::triggered , this , [&](){
         QString filename = QFileDialog::getOpenFileName(this,tr("open file"),
                                                         jsonioctrl::instance()._default_editor_path,
@@ -44,28 +44,28 @@ FramelessWidget::FramelessWidget(QWidget *parent) :
 //    editor->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_E));
     _contextmenu->addAction(editor);
 
-    QAction* calcultor = new QAction("calcultor",this);
+    QAction* calcultor = new QAction(tr("calcultor"),this);
     connect( calcultor , &QAction::triggered , this , [&](){
         emit sig_calcultor();
     } );
 //    reload->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_R));
     _contextmenu->addAction(calcultor);
 
-    QAction* reload = new QAction("reload",this);
+    QAction* reload = new QAction(tr("reload"),this);
     connect( reload , &QAction::triggered , this , [&](){
         emit sig_reload();
     } );
 //    reload->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_R));
     _contextmenu->addAction(reload);
 
-    QAction* config = new QAction("settings",this);
+    QAction* config = new QAction(tr("settings"),this);
     connect( config , &QAction::triggered , this , [&](){
         emit sig_config();
     } );
 //    config->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_O));
     _contextmenu->addAction(config);
 
-    QAction* close = new QAction("close",this);
+    QAction* close = new QAction(tr("close"),this);
     connect( close , &QAction::triggered , this , [&](){
         QString apppath = QCoreApplication::applicationDirPath();
         QString configfile = apppath + "/config/gomihaco_config.json";

@@ -15,7 +15,6 @@ calcultor::calcultor(QWidget *parent) :
     this->on_pb_dec_clicked();
 //    ui->cb_mode->setEnabled(false);
 
-//    _setres[_mode::_8bit] =
 }
 
 calcultor::~calcultor()

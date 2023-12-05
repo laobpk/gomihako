@@ -1,4 +1,5 @@
 #include <QApplication>
+#include <QTranslator>
 //#include "mainwindow.h"
 #include "form.h"
 //#include "testicon.h"
@@ -17,9 +18,74 @@
 #include "jsonioctrl.hpp"
 #endif
 
+#define debuging
+
+#ifdef debuging
+#include "player/player.h"
+#include "gamepad/gamepad.h"
+#include "gamepad/gamepaddraw.h"
+//#include "gamepad/sfmltest.h"
+#endif
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+#ifdef debuging
+    //! gamepad start
+//    qRegisterMetaType<JOYINFOEX>("JOYINFOEX");
+    qRegisterMetaType<XINPUT_STATE>("XINPUT_STATE");
+//    gamepad g;
+//    g.show();
+//    gamepaddraw d;
+//    d.show();
+//    sfmltest s;
+//    s.start();
+//    s.wait();
+    while(true);
+    //! gamepad end
+//    Player w;
+//    w.show();
+#else
+    QTranslator translator;
+    QString apppath = QCoreApplication::applicationDirPath();
+    QString configfile = apppath + "/config/gomihaco_config.json";
+    jsonioctrl::instance().readconfig(configfile);
+    int language = jsonioctrl::instance()._language;
+
+    auto switchlanguage = [&](int language){
+        QString tsfile;
+        switch (language) {
+        case language::english:
+            tsfile = ":/translations/gomihako_en.qm";
+            break;
+        case language::chinese:
+            tsfile = ":/translations/gomihako_zh_CN.qm";
+            break;
+        case language::russian:
+            tsfile = ":/translations/gomihako_ru.qm";
+            break;
+        case language::german:
+            tsfile = ":/translations/gomihako_de.qm";
+            break;
+        case language::french:
+            tsfile = ":/translations/gomihako_fr.qm";
+            break;
+        case language::japanese:
+            tsfile = ":/translations/gomihako_ja.qm";
+            break;
+        case language::korean:
+            tsfile = ":/translations/gomihako_kr.qm";
+            break;
+        default:
+            break;
+        }
+        if (translator.load(tsfile))
+        {
+            a.installTranslator(&translator);
+        }
+    };
+
+    switchlanguage(language);
 
 //    MainWindow* w = new MainWindow;
 //    w->show();
@@ -38,19 +104,19 @@ int main(int argc, char *argv[])
     fw->show();
 
     Form* f = new Form;
-    f->setWindowTitle("contents");
     QObject::connect(fw,&FramelessWidget::sig_doubleclicked,f,&Form::slot_doubleclick_show);
     QObject::connect(fw,&FramelessWidget::sig_exit,f,&Form::close);
     QObject::connect(fw,&FramelessWidget::sig_reload,f,&Form::slot_reload);
 
     config* c = new config;
-    c->setWindowTitle("config");
     QObject::connect(fw,&FramelessWidget::sig_config,c,&config::show);
     QObject::connect(fw,&FramelessWidget::sig_exit,c,&config::close);
     QObject::connect(fw,&FramelessWidget::sig_reload,c,&config::reload);
+    QObject::connect(c,&config::sig_switchlanguage,[&](){
+        switchlanguage(jsonioctrl::instance()._language);
+    });
 
     calcultor* _calcultor = new calcultor;
-    _calcultor->setWindowTitle("_calcultor");
     QObject::connect(fw,&FramelessWidget::sig_calcultor,_calcultor,&calcultor::show);
     QObject::connect(fw,&FramelessWidget::sig_exit,_calcultor,&calcultor::close);
 
@@ -61,7 +127,7 @@ int main(int argc, char *argv[])
         _calcultor->deleteLater();
         a.quit();
     });
-
+#endif
 //    testicon* icon = new testicon;
 //    icon->add_mainwindow(f);
 //    icon->show();

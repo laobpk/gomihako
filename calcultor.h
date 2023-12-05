@@ -5,8 +5,6 @@
 #include <QMap>
 #include <functional>
 
-using functiontype = std::function<void()>;
-
 namespace Ui {
 class calcultor;
 }
@@ -164,8 +162,6 @@ private:
     bool _integer;
 
     bool _acaftersympol;
-
-    QMap<int,functiontype> _setres;
 };
 
 #endif // CALCULTOR_H
